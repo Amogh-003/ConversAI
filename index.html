@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot in ReactJS</title>
+
+    <!-- Google Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+
+    <!-- Spline Viewer Script -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: 'Inter', sans-serif;
+        background: #000;
+      }
+
+      .main-layout {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+      }
+
+      #root {
+        width: 50%;
+        height: 100%;
+        z-index: 2;
+        flex-shrink: 0;
+      }
+
+      .spline-right {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: stretch;
+        justify-content: stretch;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      spline-viewer.zoomed-spline {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        border: none;
+        transform: scale(1.5) translateY(10%) translateX(-8%);
+        transform-origin: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-layout">
+      <!-- Chatbot (left) -->
+      <div id="root"></div>
+
+      <!-- Spline Animation (right) -->
+      <div class="spline-right">
+        <spline-viewer 
+          url="https://prod.spline.design/GXbC77fSv7li1pDl/scene.splinecode" 
+          show-ui="false"
+          loading-anim="false"
+          background="transparent"
+          class="zoomed-spline">
+        </spline-viewer>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
